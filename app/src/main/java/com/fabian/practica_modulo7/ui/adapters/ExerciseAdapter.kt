@@ -1,11 +1,8 @@
 package com.fabian.practica_modulo7.ui.adapters
 
-import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.fabian.practica_modulo7.data.remote.model.ExerciseDto
-import com.fabian.practica_modulo7.databinding.ExerciseElementBinding
-import com.fabian.practica_modulo7.ui.adapters.ExerciseViewHolder
 
 class ExerciseAdapter(
     private var exercises: List<ExerciseDto>,
@@ -28,7 +25,7 @@ class ExerciseAdapter(
 
     fun updateData(newExercises: List<ExerciseDto>, newCompletedIds: Set<String>) {
         exercises = newExercises
-        completedIds = newCompletedIds // Guardamos los IDs
+        completedIds = newCompletedIds
         notifyDataSetChanged()
     }
 }

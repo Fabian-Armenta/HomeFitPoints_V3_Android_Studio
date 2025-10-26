@@ -6,7 +6,6 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.fabian.practica_modulo7.data.remote.model.ExerciseDto
-// import com.fabian.practica_modulo7.databinding.ActivityMainBinding // <-- BORRA ESTA IMPORTACIÓN, NO SE USA
 import com.fabian.practica_modulo7.databinding.ExerciseElementBinding
 
 class ExerciseViewHolder (
@@ -36,12 +35,10 @@ class ExerciseViewHolder (
             binding.ivCompletedCheckmark.visibility = View.GONE
         }
     }
-
-    // El companion object está bien
     companion object{
         fun create(
             parent: ViewGroup,
-            onGameClick: (ExerciseDto) -> Unit // Renombré el parámetro para claridad
+            onGameClick: (ExerciseDto) -> Unit
         ): ExerciseViewHolder{
             val binding = ExerciseElementBinding.inflate(
                 LayoutInflater.from(parent.context),

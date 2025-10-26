@@ -2,7 +2,6 @@ package com.fabian.practica_modulo7.ui.viewmodels
 
 import androidx.annotation.StringRes
 import com.fabian.practica_modulo7.data.remote.model.ExerciseDto
-import com.fabian.practica_modulo7.R
 
 sealed class ListScreenState {
     object Loading : ListScreenState()

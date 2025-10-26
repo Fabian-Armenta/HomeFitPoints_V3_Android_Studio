@@ -11,11 +11,10 @@ import com.fabian.practica_modulo7.data.remote.model.ExerciseDto
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import okio.IOException
-import com.fabian.practica_modulo7.ui.viewmodels.ListScreenState
 
 class ExerciseListViewModel(
     private val repository: ExerciseRepository,
-    private val preferencesRepository: UserPreferencesRepository // <-- AÑADIDO
+    private val preferencesRepository: UserPreferencesRepository
 ) : ViewModel() {
 
     private val _uiState = MutableLiveData<ListScreenState>(ListScreenState.Loading)
@@ -29,7 +28,7 @@ class ExerciseListViewModel(
             try {
                 val exercisesFlow: Flow<List<ExerciseDto>> = flow { emit(repository.getExercisesApiary()) }
 
-                // Usamos combine para esperar a que AMBOS flows (API y DataStore) emitan un valor
+                // Usamos combine para esperar a que AMBOS (API y DataStore) emitan un valor
                 exercisesFlow.combine(preferencesRepository.completedExerciseIdsFlow) { exercisesFromApi, completedIds ->
                     // Cuando tengamos ambos, emitimos el estado Success combinado
                     _uiState.postValue(ListScreenState.Success(exercisesFromApi, completedIds))

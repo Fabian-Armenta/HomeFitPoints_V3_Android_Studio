@@ -4,7 +4,6 @@ import android.content.Context
 import android.util.Log
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
-import com.fabian.practica_modulo7.data.remote.RetrofitHelper
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
@@ -49,9 +48,7 @@ class UserPreferencesRepository(context: Context) {
 
     suspend fun addPoints(pointsToAdd: Int) {
         dataStore.edit { preferences ->
-            // Obtenemos el puntaje actual
             val currentPoints = preferences[UserPreferencesKeys.TOTAL_POINTS] ?: 0
-            // Sumamos los nuevos puntos
             preferences[UserPreferencesKeys.TOTAL_POINTS] = currentPoints + pointsToAdd
             Log.d(TAG, "Added points: $pointsToAdd. New total: ${currentPoints + pointsToAdd}")
         }

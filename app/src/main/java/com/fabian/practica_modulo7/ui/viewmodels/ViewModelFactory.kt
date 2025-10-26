@@ -13,12 +13,10 @@ class ViewModelFactory(
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(ExerciseListViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            // PASAMOS AMBOS repositorios al ExerciseListViewModel
             return ExerciseListViewModel(repository, preferencesRepository) as T
         }
         if (modelClass.isAssignableFrom(ExerciseDetailViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            // PASAMOS AMBOS repositorios al ExerciseDetailViewModel
             return ExerciseDetailViewModel(repository, preferencesRepository) as T
         }
 

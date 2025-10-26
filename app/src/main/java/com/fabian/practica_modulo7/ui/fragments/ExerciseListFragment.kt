@@ -60,7 +60,6 @@ class ExerciseListFragment: Fragment() {
     }
 
     private fun setupRecyclerView() {
-        // Inicializa el adapter vacío, se llenará cuando lleguen los datos
         exerciseAdapter = ExerciseAdapter(emptyList()) { selectedExercise ->
             selectedExercise.id?.let { id ->
                 val action = ExerciseListFragmentDirections.actionListToDetail(id)
@@ -75,7 +74,6 @@ class ExerciseListFragment: Fragment() {
 
     private fun observeViewModelState() {
         viewModel.uiState.observe(viewLifecycleOwner) { state ->
-            // Cuando el estado cambia, actualiza la UI
             handleUiState(state)
         }
     }
