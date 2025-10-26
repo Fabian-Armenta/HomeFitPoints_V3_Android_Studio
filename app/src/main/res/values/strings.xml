@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">HomeFitPoints</string>
+    <string name="title">HomeFitPoints</string>
+    <string name="exercise">Ejercicio en Casa</string>
+    <string name="format_difficulty">Dificultad: %s</string>
+    <string name="format_repetitions">Repeticiones: %d</string>
+    <string name="format_tipo">Tipo de Ejercicio: %s</string>
+    <string name="format_calories">Calorías quemadas: %d</string>
+    <string name="format_points">Puntos: %d</string>
+    <string name="error_connection_title">Error de Conexión</string>
+    <string name="error_connection_message">No se pudo conectar al servidor. Revisa tu conexión a internet.</string>
+    <string name="error_connection_retry_button">Reintentar</string>
+    <string name="error_icon_content_description">Ícono de error de conexión</string>
+    <string name="error_connection">Error de conexión. Verifica tu red.</string>
+    <string name="error_unexpected">Error inesperado: %s</string>
+    <string name="back_button_description">Regresar a la lista</string>
+    <string name="mark_as_completed">Marcar como Completado</string>
+</resources>

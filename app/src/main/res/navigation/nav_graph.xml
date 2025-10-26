@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/exerciseListFragment"> <fragment
+    android:id="@+id/exerciseListFragment"
+    android:name="com.fabian.practica_modulo7.ui.fragments.ExerciseListFragment"
+    android:label="Ejercicios"
+    tools:layout="@layout/fragment_exercise_list" >
+    <action
+        android:id="@+id/action_list_to_detail"
+        app:destination="@id/exerciseDetailFragment" />
+    <action
+        android:id="@+id/action_list_to_error"
+        app:destination="@id/errorConnectionFragment" />
+</fragment>
+
+    <fragment
+        android:id="@+id/exerciseDetailFragment"
+        android:name="com.fabian.practica_modulo7.ui.fragments.ExerciseDetailFragment"
+        android:label="Detalle"
+        tools:layout="@layout/fragment_exercise_detail" >
+        <argument
+            android:name="exerciseId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detail_to_error"
+            app:destination="@id/errorConnectionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/errorConnectionFragment"
+        android:name="com.fabian.practica_modulo7.ui.fragments.ErrorConnectionFragment"
+        android:label="Error"
+        tools:layout="@layout/fragment_error_detail" />
+
+</navigation>
